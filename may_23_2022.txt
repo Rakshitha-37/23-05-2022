@@ -1,0 +1,48 @@
+//find missing element in array
+
+#include<stdio.h>
+
+int main()
+{
+int a[5]={1,2,5,3};
+int sum=0,i;
+for(i=0;i<5;i++)
+{
+sum=sum+a[i];
+}
+int ele=(5*(5+1))/2-(sum);
+printf("missing element=%d",ele);
+
+}
+
+//post-increment and pre-increment
+#include<stdio.h>
+int main()
+{
+int i=5;
+//printf("%d",i++);//5
+//printf("%d",++i);//7
+//printf("%d %d",i++,++i);//6 7
+printf("%d %d",++i,++i);// 7 7
+
+}
+
+//volatile
+#include<stdio.h>
+int main()
+{
+ volatile int i=5;
+printf("%d %d",++i,++i);//7 6
+}
+
+//statically int a[10]// 40 byte 10*4
+//dynamically int *ptr=(int *)malloc(10*sizeof(int))
+// int *ptr=(int *)calloc(10,sizeof(int))
+
+
+//dangling pointer
+int *ptr=(int *)malloc(10*sizeof(int))
+free(ptr);
+printf("%d",*ptr);
+
+
